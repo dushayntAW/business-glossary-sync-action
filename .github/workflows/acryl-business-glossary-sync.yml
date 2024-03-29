@@ -21,7 +21,7 @@ jobs:
           # TODO(developer): Update this with your config/credentials.
           business_glossary_file: ./business_glossaries.yaml
           enable_auto_id: "true"
-          prune: "false"
+          prune: "true"
 
           datahub_gms_host: ${{ secrets.ACRYL_GMS_HOST }}
           datahub_gms_token: ${{ secrets.ACRYL_GMS_TOKEN }}
