@@ -1,0 +1,40 @@
+version: '1'
+source: DataHub
+owners:
+  users:
+    - dataplatformadmin@autotrader.co.uk
+url: "https://github.com/datahub-project/datahub/"
+nodes:
+  - name: Governance
+    description: Terms related to Data Governance
+    terms:
+      - name: PII
+        description: |-
+          Indicates that the data contains Personally Identifiable Information (PII). An additional glossary term should be applied to determine the specific type of PII.
+  - name: Data Products
+    description: Data Products are
+    nodes:
+      - name: Data Product Type
+        description: Defines the type of Data Product
+        terms:
+          - name: Data Product Producer (Source Aligned)
+            description: |-
+              A producing data product tends to source aligned and is a producer of (usually raw) data.
+
+              In this example, an online shop is subdivided into domains along the customer journey, from product search over checkout to payment. In a data mesh, these domains publish their data as data products, so others can access them. The engineers do analytics on their own data to improve their operational systems and validate the business value of new features. They use domain neighbor's data to simplify their queries and get insights on effects in downstream domains. These domain data can be referred to as source-aligned, as most of their published data products correspond closely to the domain events and entities generated in their operational systems.
+          - name: Data Product Consumer
+            description: |-
+              A producing data product tends to consumer aligned and is a consumer of other data products.
+
+              For complicated subsystems , it can be efficient that a team focuses solely on delivering a data product that is aggregated of various data products from other domains. A typical example is a 360° customer view that includes relevant data from multiple domains, such as account data, orders, shipments, invoices, returns, account balance, and internal ratings. With respect to different bounded contexts, a comprehensive 360° customer view is hard to build, but it might be useful for many other domains. Another example for a complicated subsystem is building sophisticated ML models that require enhanced data science skills. It may be sensible that a data scientists team develops and trains a recommendation model by using data from checkout and the 360° customer view, and another team uses this model and focuses to present the calculated recommendations in the online shop or in promotional emails.
+
+              OR/
+
+              In a company, there are also business departments that need data from the whole value stream to make sensible decisions, with people working in these departments are business experts but not engineers or technology-savvy. Management and controlling requires detailed reports and KPIs from all domains to identify strengths and deviations. Marketing does funnel and web analysis over all steps in the customer journey in their own optimized tools, such as Google Analytics or Adobe Analytics. In these domains, the data model is optimized for a specific department's needs and can therefore be described as consumer-aligned. Consumer-aligned reports were often one of the main tasks of central data teams. With data mesh, (new) consumer-aligned domain teams focus on fulfilling data needs of one specific business domain, allowing them to gain deep domain knowledge and constantly develop better analytical results. Business and IT grow closer together, either by building integrated domain teams or by having engineering teams that provide domain data as a service for the business, e.g., to support C-level or controlling. Their data are typically used for their analytics and reports, but does not need to be published and managed as data products for other domains.
+    terms:
+      - name: ODP
+        description: |-
+          ODPs (Output Data Ports) represents an intent to publish a data asset for consumption by other data products, individuals or systems.
+        knowledge_links:
+          - label: Wiki link for PII
+            url: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/personal-information-what-is-it/what-is-personal-information-a-guide/"

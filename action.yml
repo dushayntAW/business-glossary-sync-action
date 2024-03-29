@@ -14,6 +14,9 @@ inputs:
   enable_auto_id:
     description: "Set to true if you use `enable_auto_id` in your business glossary ingestion."
     default: "false"
+  prune:
+    description: "Set to true if you use `enable_auto_id` in your business glossary ingestion."
+    default: "true"
 
   debug_mode:
     description: "Set to true to enable debug mode."
@@ -38,7 +41,8 @@ runs:
         python ${{ github.action_path }}/glossary-sync.py \
           update-glossary-file \
           --enable-auto-id ${{ inputs.enable_auto_id }} \
-          --file ${{ inputs.business_glossary_file }}
+          --file ${{ inputs.business_glossary_file }} \
+          --prune ${{ inputs.prune }}
 
         git status
       env:
@@ -46,16 +50,16 @@ runs:
         DATAHUB_GMS_TOKEN: ${{ inputs.datahub_gms_token }}
         DEBUG_MODE: ${{ inputs.debug_mode }}
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v5
-      with:
-        branch: acryl-business-glossary-sync
-        commit-message: "[automated] Update business glossary at ${{ inputs.business_glossary_file }}"
-        title: Update business glossary
-        body: |
-          Updates the business glossary at ${{ inputs.business_glossary_file }} with changes from Acryl DataHub.
+    # - name: Create Pull Request
+    #   uses: peter-evans/create-pull-request@v5
+    #   with:
+    #     branch: acryl-business-glossary-sync
+    #     commit-message: "[automated] Update business glossary at ${{ inputs.business_glossary_file }}"
+    #     title: Update business glossary
+    #     body: |
+    #       Updates the business glossary at ${{ inputs.business_glossary_file }} with changes from Acryl DataHub.
 
-          Automated changes by [acryldata/business-glossary-sync-action](https://github.com/acryldata/business-glossary-sync-action).
+    #       Automated changes by [acryldata/business-glossary-sync-action](https://github.com/acryldata/business-glossary-sync-action).
 
 branding:
   icon: "activity"
