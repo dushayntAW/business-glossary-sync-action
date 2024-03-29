@@ -36,6 +36,7 @@ runs:
       shell: bash
       run: |
         set -x
+        echo "HELLOOO"
         pip install -r ${{ github.action_path }}/requirements.txt
 
         python ${{ github.action_path }}/glossary-sync.py \
@@ -43,7 +44,9 @@ runs:
           --enable-auto-id ${{ inputs.enable_auto_id }} \
           --file ${{ inputs.business_glossary_file }} \
           --prune ${{ inputs.prune }}
-
+        
+        cat  ${{ inputs.business_glossary_file }}
+        
         git status
       env:
         DATAHUB_GMS_HOST: ${{ inputs.datahub_gms_host }}
