@@ -38,3 +38,310 @@ nodes:
         knowledge_links:
           - label: Wiki link for PII
             url: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/personal-information-what-is-it/what-is-personal-information-a-guide/"
+  - id: urn:li:glossaryNode:b923555c7c35522f366bedce9e76ae54
+    name: ClientsAndAccounts
+    description: Provides basic concepts such as account, account holder, account provider, relationship manager that are commonly used by financial services providers to describe customers and to determine counterparty identities
+    owners:
+      groups:
+        - finance
+    terms:
+      - id: urn:li:glossaryTerm:489f2febc2b27847b9ae231a1092e5d4
+        name: Balance
+        description: Amount of money available or owed
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Balance
+        owners:
+          groups:
+            - finance
+      - id: urn:li:glossaryTerm:555d97d68c20d0bc2dc8acf5fd1e49c2
+        name: Account
+        description: Container for records associated with a business arrangement for regular transactions and services
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account
+        owners:
+          groups:
+            - finance
+        inherits:
+          - Classification.HighlyConfidential
+        contains:
+          - ClientsAndAccounts.Balance
+  - id: urn:li:glossaryNode:ClientsAndAccounts
+    name: ClientsAndAccounts
+    description: Provides basic concepts such as account, account holder, account provider, relationship manager that are commonly used by financial services providers to describe customers and to determine counterparty identities
+    owners:
+      users:
+        - jdoe
+    terms:
+      - id: urn:li:glossaryTerm:AccountBalance
+        name: AccountBalance
+        description: amount of money available or owed
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Balance
+        owners:
+          users:
+            - jdoe
+        custom_properties:
+          FQDN: AccountBalance
+      - id: urn:li:glossaryTerm:SavingAccount
+        name: SavingAccount
+        description: a product provided to consumers and businesses by a bank or similar depository institution such as a checking account, savings account, certificate of deposit, debit or pre-paid card, or credit card
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/BankingProduct
+        owners:
+          users:
+            - jdoe
+        custom_properties:
+          FQDN: SavingAccount
+      - id: urn:li:glossaryTerm:CustomerAccount
+        name: CustomerAccount
+        description: account that represents an identified, named collection of balances and cumulative totals used to summarize customer transaction-related activity over a designated period of time
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/CustomerAccount
+        owners:
+          users:
+            - jdoe
+        custom_properties:
+          FQDN: CustomerAccount
+  - id: urn:li:glossaryNode:97292eff68de3561a30669c21acd84d2
+    name: Housing
+    description: Provides terms related to the housing domain
+    owners:
+      users:
+        - mjames
+      groups:
+        - interior
+    terms:
+      - id: urn:li:glossaryTerm:d09d8b36278c4fd95bf3e1eb2c18a7ac
+        name: WindowColor
+        description: Supported window colors
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account
+        owners:
+          users:
+            - mjames
+          groups:
+            - interior
+        values:
+          - Housing.Colors.Red
+          - Housing.Colors.Pink
+      - id: urn:li:glossaryTerm:fcf49a984d5b51c1962d98fecf1e0f56
+        name: Spoon
+        description: an implement consisting of a small, shallow oval or round bowl on a long handle, used for eating, stirring, and serving food.
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account
+        owners:
+          users:
+            - mjames
+          groups:
+            - interior
+        related_terms:
+          - Housing.Kitchen
+        knowledge_links:
+          - url: https://en.wikipedia.org/wiki/Spoon
+            label: Wiki link
+      - id: urn:li:glossaryTerm:ceba81d673e6f956eba4c7b53eeed4f7
+        name: Kitchen
+        description: a room or area where food is prepared and cooked.
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account
+        owners:
+          users:
+            - mjames
+          groups:
+            - interior
+    nodes:
+      - id: urn:li:glossaryNode:b34fe869a1e9e16f105a3108ee74c17d
+        name: Colors
+        description: Colors that are used in Housing construction
+        owners:
+          users:
+            - mjames
+          groups:
+            - interior
+        terms:
+          - id: urn:li:glossaryTerm:1fbbe117180e6cd80663774d77aac04d
+            name: Pink
+            description: pink color
+            term_source: EXTERNAL
+            source_ref: FIBO
+            source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account
+            owners:
+              users:
+                - mjames
+              groups:
+                - interior
+          - id: urn:li:glossaryTerm:46739c44cb93c738b24e7f9181e20b81
+            name: Red
+            description: red color
+            term_source: EXTERNAL
+            source_ref: FIBO
+            source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account
+            owners:
+              users:
+                - mjames
+              groups:
+                - interior
+          - id: urn:li:glossaryTerm:3949a73583cf8b4f518463f1fc2787d3
+            name: Green
+            description: green color
+            term_source: EXTERNAL
+            source_ref: FIBO
+            source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account
+            owners:
+              users:
+                - mjames
+              groups:
+                - interior
+  - id: urn:li:glossaryNode:CypressNode
+    name: CypressNode
+    description: Provides basic concepts such as account, account holder, account provider, relationship manager that are commonly used by financial services providers to describe customers and to determine counterparty identities
+    owners: {}
+    terms:
+      - id: urn:li:glossaryTerm:CypressNode.CypressColumnInfoType
+        name: CypressNode.CypressColumnInfoType
+        description: a definition
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/BankingProduct
+        owners: {}
+        custom_properties:
+          FQDN: SavingAccount
+      - id: urn:li:glossaryTerm:CypressNode.CypressTerm
+        name: CypressNode.CypressTerm
+        description: a product provided to consumers and businesses by a bank or similar depository institution such as a checking account, savings account, certificate of deposit, debit or pre-paid card, or credit card
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/BankingProduct
+        owners: {}
+        custom_properties:
+          FQDN: SavingAccount
+  - id: urn:li:glossaryNode:510f2c45a4622cb5ae7d4616c2aeafa2
+    name: Classification
+    description: A set of terms related to Data Classifications
+    owners:
+      users:
+        - mjames
+    knowledge_links:
+      - url: https://en.wikipedia.org/wiki/Classification
+        label: Wiki link for classification
+    terms:
+      - id: urn:li:glossaryTerm:23f52095a9a4d310bc3a7851b483a462
+        name: Confidential
+        description: Confidential Datas
+        owners:
+          users:
+            - mjames
+        inherits: []
+        contains: []
+        custom_properties:
+          is_confidential: 'True'
+        knowledge_links: []
+      - id: urn:li:glossaryTerm:a71be2d5-13df-4889-9241-865ee0d7b53b
+        name: AccountBalance
+        description: ''
+        owners:
+          users:
+            - aseem.bansal@acryl.io
+        knowledge_links:
+          - url: http://localhost:9002/domain/urn:li:domain:engineering/Documentation?is_lineage_mode=false
+            label: datatest
+      - id: urn:li:glossaryTerm:5eab4aaebf61b87632206070f85f107c
+        name: HighlyConfidential
+        description: Highly Confidential Data
+        owners:
+          users:
+            - mjames
+        custom_properties:
+          is_confidential: 'True'
+        domain: urn:li:domain:Marketing
+    nodes:
+      - id: urn:li:glossaryNode:f375c7fb-4a72-4124-9a4a-f9bd9ef7f1ec
+        name: Cypress
+        description: ''
+        owners:
+          users:
+            - shared_admin_user@acryl.io
+      - id: urn:li:glossaryNode:cabe842a-b58e-4325-a63b-3b924fe5ca29
+        name: Cypress
+        description: ''
+        owners:
+          users:
+            - shared_admin_user@acryl.io
+  - id: urn:li:glossaryNode:6772284080526ce21155258b8e0a840d
+    name: Shipping
+    description: Provides terms related to the shipping domain
+    owners:
+      users:
+        - njones
+      groups:
+        - logistics
+    knowledge_links:
+      - url: https://en.wikipedia.org/wiki/Freight_transport
+        label: Wiki link for shipping
+    terms:
+      - id: urn:li:glossaryTerm:3c76bea9fa4cc59cd5757f441bd735eb
+        name: FullAddress
+        description: A collection of information to give the location of a building or plot of land.
+        term_source: EXTERNAL
+        source_ref: FIBO
+        source_url: https://www.google.com
+        owners:
+          users:
+            - njones
+          groups:
+            - logistics
+        inherits:
+          - urn:li:glossaryTerm:afae44b8ca5aed19915df3a3686ea7fd
+        contains:
+          - urn:li:glossaryTerm:fd2ab6e92e43f2eddbdb7a46c900a5f8
+          - urn:li:glossaryTerm:918050b08c033b6458d8fd4e2f3cd402
+          - urn:li:glossaryTerm:16c301dada6a58d5e811b0bce5dd3ad9
+        custom_properties:
+          is_used_for_compliance_tracking: 'True'
+        knowledge_links:
+          - url: https://en.wikipedia.org/wiki/Address
+            label: Wiki link
+        domain: urn:li:domain:Logistics
+  - id: urn:li:glossaryNode:e4cac2a62c5bb1ba2637113b5906019c
+    name: PersonalInformation
+    description: All terms related to personal information
+    owners:
+      users:
+        - mjames
+    terms:
+      - id: urn:li:glossaryTerm:41516e310acbfd9076fffc2c98d2d1a3
+        name: Email
+        description: An individual's email address
+        owners:
+          groups:
+            - Trust and Safety
+        inherits:
+          - Classification.Confidential
+      - id: urn:li:glossaryTerm:d89393e6b47c6b25a305e6f9cee1d9bd
+        name: Address
+        description: A physical address
+        owners:
+          users:
+            - mjames
+      - id: urn:li:glossaryTerm:c44bb457183bc213e5c6210fb9333f6a
+        name: Gender
+        description: The gender identity of the individual
+        owners:
+          users:
+            - mjames
+        inherits: []
+terms:
+  - id: urn:li:glossaryTerm:371d023a-03eb-49dd-b526-3eb0f12bf8ff
+    name: sss
+    description: ''
+    owners:
+      users:
+        - shared_admin_user@acryl.io
